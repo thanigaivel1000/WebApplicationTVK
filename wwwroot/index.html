@@ -1,369 +1,533 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamil Nadu Election Results 2026</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
+<title>Tamil Nadu Election Results 2026</title>
 
-        body {
-            background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
-            overflow-x: hidden;
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        .glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        .glow {
-            box-shadow: 0 0 30px rgba(59,130,246,0.35);
-        }
+<style>
 
-        .ticker {
-            animation: ticker 20s linear infinite;
-            white-space: nowrap;
-        }
+*{
+    font-family:'Poppins',sans-serif;
+}
 
-        @keyframes ticker {
-            0% {
-                transform: translateX(100%);
-            }
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:
+    radial-gradient(circle at top left,#ffd633 0%,transparent 28%),
+    radial-gradient(circle at bottom right,#ffd633 0%,transparent 25%),
+    linear-gradient(135deg,#780000,#c40000,#7a0000);
+    color:white;
+}
 
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.12);
+}
 
-        .fade-up {
-            animation: fadeUp 1s ease;
-        }
+.glow{
+    box-shadow:0 0 35px rgba(255,215,0,0.18);
+}
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+.hero-bg::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#ffd633 0%,transparent 70%);
+    opacity:0.08;
+    top:-250px;
+    right:-200px;
+    border-radius:50%;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.live-dot{
+    width:12px;
+    height:12px;
+    background:#ff3b3b;
+    border-radius:50%;
+    animation:pulse 1.5s infinite;
+}
 
-        .pulse-live {
-            animation: pulseLive 1.5s infinite;
-        }
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.4)}
+    100%{transform:scale(1)}
+}
 
-        @keyframes pulseLive {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
+.ticker{
+    white-space:nowrap;
+    animation:ticker 30s linear infinite;
+}
 
-            50% {
-                transform: scale(1.15);
-                opacity: 0.7;
-            }
+@keyframes ticker{
+    0%{transform:translateX(100%)}
+    100%{transform:translateX(-100%)}
+}
 
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-    </style>
+.card-hover:hover{
+    transform:translateY(-6px);
+    transition:0.3s;
+}
+
+.gold{
+    color:#ffd633;
+}
+
+</style>
 </head>
-<body class="text-white min-h-screen">
 
-    <!-- Header -->
-    <header class="glass sticky top-0 z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div>
-                <h1 class="text-3xl font-bold tracking-wide">Tamil Nadu Election Results 2026</h1>
-                <p class="text-gray-300 text-sm">Live Coverage • Trends • Analysis</p>
-            </div>
+<body>
 
-            <div class="flex items-center gap-3">
-                <div class="w-3 h-3 rounded-full bg-red-500 pulse-live"></div>
-                <span class="font-semibold">LIVE</span>
-            </div>
+<!-- HEADER -->
+
+<header class="glass sticky top-0 z-50 border-b border-yellow-500/20">
+
+<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+    <div>
+        <h1 class="text-4xl font-extrabold">
+            Tamil Nadu Election Results 2026
+        </h1>
+
+        <p class="text-yellow-100 mt-1 text-lg">
+            Live Coverage • Government Formation • CM Initiatives
+        </p>
+    </div>
+
+    <div class="flex items-center gap-3">
+        <div class="live-dot"></div>
+        <span class="font-bold text-lg">LIVE</span>
+    </div>
+
+</div>
+
+</header>
+
+<!-- TICKER -->
+
+<section class="bg-yellow-400 text-black py-3 overflow-hidden font-semibold">
+
+<div class="ticker text-lg">
+
+🔥 Vijay sworn in as Tamil Nadu Chief Minister • PM Modi congratulates Vijay • 717 TASMAC shops ordered shut • 200 units free electricity announced • Historic alliance government formed • Massive celebrations across Tamil Nadu
+
+</div>
+
+</section>
+
+<!-- HERO -->
+
+<section class="relative hero-bg overflow-hidden">
+
+<div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+
+    <div>
+
+        <div class="inline-block px-5 py-2 rounded-full bg-yellow-400 text-black font-semibold mb-6">
+            2026 Assembly Elections
         </div>
-    </header>
 
-    <!-- Breaking News -->
-    <section class="bg-red-600 py-3 overflow-hidden">
-        <div class="ticker text-lg font-medium">
-            🔥 Breaking: Major alliances gain momentum across Tamil Nadu constituencies • Exit polls indicate close competition • Counting centers under heavy security • Chennai voter turnout hits record levels
+        <h2 class="text-6xl leading-tight font-extrabold mb-6">
+            Real-Time Tamil Nadu <br>
+            Election Dashboard
+        </h2>
+
+        <p class="text-2xl text-yellow-100 leading-relaxed mb-10">
+            Follow live constituency trends, CM oath ceremony highlights,
+            government formation updates, and Tamil Nadu's new policy announcements.
+        </p>
+
+        <div class="flex gap-5 flex-wrap">
+
+            <button class="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition">
+                Live Results
+            </button>
+
+            <button class="border border-yellow-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 hover:text-black transition">
+                Watch Ceremony
+            </button>
+
         </div>
-    </section>
 
-    <!-- Hero -->
-    <section class="max-w-7xl mx-auto px-6 py-12 fade-up">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
+    </div>
+
+    <!-- Seat Projection -->
+
+    <div class="glass rounded-3xl p-10 glow">
+
+        <h3 class="text-3xl font-bold mb-8">
+            Seat Projection
+        </h3>
+
+        <div class="space-y-8">
 
             <div>
-                <h2 class="text-5xl font-bold leading-tight mb-6">
-                    Real-Time Tamil Nadu Election Dashboard
-                </h2>
+                <div class="flex justify-between mb-3">
+                    <span class="text-xl">TVK Alliance</span>
+                    <span class="text-xl font-bold">132 Seats</span>
+                </div>
 
-                <p class="text-gray-300 text-lg leading-relaxed mb-8">
-                    Follow live constituency trends, alliance performance, voter insights, seat projections, and breaking political developments across Tamil Nadu.
-                </p>
-
-                <div class="flex gap-4 flex-wrap">
-                    <button class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl font-semibold glow">
-                        Live Results
-                    </button>
-
-                    <button class="border border-white/20 hover:bg-white/10 transition px-6 py-3 rounded-2xl font-semibold">
-                        Watch Analysis
-                    </button>
+                <div class="w-full bg-red-900 rounded-full h-5">
+                    <div class="bg-yellow-400 h-5 rounded-full" style="width:57%"></div>
                 </div>
             </div>
 
-            <div class="glass rounded-3xl p-8 glow">
-                <h3 class="text-2xl font-semibold mb-6">Seat Projection</h3>
+            <div>
+                <div class="flex justify-between mb-3">
+                    <span class="text-xl">Opposition</span>
+                    <span class="text-xl font-bold">86 Seats</span>
+                </div>
 
-                <div class="space-y-6">
+                <div class="w-full bg-red-900 rounded-full h-5">
+                    <div class="bg-red-400 h-5 rounded-full" style="width:37%"></div>
+                </div>
+            </div>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>Alliance A</span>
-                            <span>132 Seats</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-4">
-                            <div class="bg-blue-500 h-4 rounded-full" style="width: 57%"></div>
-                        </div>
-                    </div>
+            <div>
+                <div class="flex justify-between mb-3">
+                    <span class="text-xl">Others</span>
+                    <span class="text-xl font-bold">16 Seats</span>
+                </div>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>Alliance B</span>
-                            <span>86 Seats</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-4">
-                            <div class="bg-green-500 h-4 rounded-full" style="width: 37%"></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>Others</span>
-                            <span>16 Seats</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-4">
-                            <div class="bg-yellow-500 h-4 rounded-full" style="width: 10%"></div>
-                        </div>
-                    </div>
-
+                <div class="w-full bg-red-900 rounded-full h-5">
+                    <div class="bg-gray-300 h-5 rounded-full" style="width:10%"></div>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <!-- Stats -->
-    <section class="max-w-7xl mx-auto px-6 py-8">
-        <div class="grid md:grid-cols-4 gap-6">
+    </div>
 
-            <div class="glass rounded-3xl p-6 text-center hover:scale-105 transition">
-                <h3 class="text-4xl font-bold text-blue-400">234</h3>
-                <p class="text-gray-300 mt-2">Total Seats</p>
-            </div>
+</div>
 
-            <div class="glass rounded-3xl p-6 text-center hover:scale-105 transition">
-                <h3 class="text-4xl font-bold text-green-400">68%</h3>
-                <p class="text-gray-300 mt-2">Voter Turnout</p>
-            </div>
+</section>
 
-            <div class="glass rounded-3xl p-6 text-center hover:scale-105 transition">
-                <h3 class="text-4xl font-bold text-yellow-400">38</h3>
-                <p class="text-gray-300 mt-2">Counting Centers</p>
-            </div>
+<!-- STATS -->
 
-            <div class="glass rounded-3xl p-6 text-center hover:scale-105 transition">
-                <h3 class="text-4xl font-bold text-red-400">LIVE</h3>
-                <p class="text-gray-300 mt-2">Result Tracking</p>
-            </div>
+<section class="max-w-7xl mx-auto px-6 py-12">
+
+<div class="grid md:grid-cols-4 gap-6">
+
+    <div class="glass rounded-3xl p-8 text-center card-hover">
+        <h3 class="text-5xl font-bold gold">234</h3>
+        <p class="mt-3 text-lg">Assembly Seats</p>
+    </div>
+
+    <div class="glass rounded-3xl p-8 text-center card-hover">
+        <h3 class="text-5xl font-bold text-green-400">68%</h3>
+        <p class="mt-3 text-lg">Voter Turnout</p>
+    </div>
+
+    <div class="glass rounded-3xl p-8 text-center card-hover">
+        <h3 class="text-5xl font-bold text-yellow-300">717</h3>
+        <p class="mt-3 text-lg">Liquor Shops Closed</p>
+    </div>
+
+    <div class="glass rounded-3xl p-8 text-center card-hover">
+        <h3 class="text-5xl font-bold text-red-300">LIVE</h3>
+        <p class="mt-3 text-lg">Government Updates</p>
+    </div>
+
+</div>
+
+</section>
+
+<!-- CEREMONY -->
+
+<section class="max-w-7xl mx-auto px-6 py-12">
+
+<div class="grid lg:grid-cols-2 gap-8">
+
+<!-- LEFT -->
+
+<div class="glass rounded-3xl p-8 glow">
+
+    <h3 class="text-4xl font-bold mb-8">
+        CM Oath Ceremony
+    </h3>
+
+    <!-- YOUR NEW IMAGE -->
+
+    <img
+        src="cm_vijay.jpg"
+        alt="CM Vijay"
+        class="rounded-3xl mb-8 w-full h-[420px] object-cover border-4 border-yellow-400"
+    >
+
+    <div class="space-y-5 text-lg leading-relaxed">
+
+        <div>
+            📍 <span class="font-bold">Venue:</span>
+            <span class="text-yellow-300">
+                Jawaharlal Nehru Stadium, Chennai
+            </span>
+        </div>
+
+        <div>
+            🕘 <span class="font-bold">Time:</span>
+            <span class="text-yellow-300">
+                10:00 AM
+            </span>
+        </div>
+
+        <div>
+            🎤 Vijay officially took oath as the 13th Chief Minister of Tamil Nadu after securing alliance support from Congress, CPI, CPI(M), VCK and IUML.
+        </div>
+
+        <div>
+            🏛️ TVK emerged as the single largest party with 108 seats and crossed the majority mark with support from 120 MLAs.
+        </div>
+
+        <div>
+            🤝 PM Narendra Modi, Rahul Gandhi, MK Stalin and several national leaders congratulated Vijay after the swearing-in ceremony.
+        </div>
+
+        <div>
+            ⚡ Vijay signed his first major order announcing
+            <span class="text-yellow-300 font-bold">
+                200 units of free electricity
+            </span>
+            for eligible households.
+        </div>
+
+        <div>
+            🚨 717 TASMAC shops near schools, temples and bus stands were ordered to shut down as part of the new reform initiative.
+        </div>
+
+        <div>
+            👥 Massive celebrations erupted across Tamil Nadu with TVK workers distributing sweets and bursting crackers.
+        </div>
+
+        <div>
+            ✨ Vijay became the first Tamil Nadu Chief Minister since 1967 not belonging to either DMK or AIADMK.
+        </div>
+
+    </div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="glass rounded-3xl p-8">
+
+    <h3 class="text-4xl font-bold mb-8">
+        CM's New Initiatives
+    </h3>
+
+    <div class="space-y-6">
+
+        <div class="bg-black/20 rounded-3xl p-6">
+
+            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
+                Namma Kalvi 2.0
+            </h4>
+
+            <p class="text-lg">
+                Smart classrooms, digital learning systems,
+                AI-enabled education tools and upgraded government schools across Tamil Nadu.
+            </p>
 
         </div>
-    </section>
 
-    <!-- Charts -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid lg:grid-cols-2 gap-8">
+        <div class="bg-black/20 rounded-3xl p-6">
 
-            <div class="glass rounded-3xl p-8">
-                <h3 class="text-2xl font-semibold mb-6">Vote Share</h3>
-                <canvas id="voteChart"></canvas>
-            </div>
+            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
+                TASMAC Reform Policy
+            </h4>
 
-            <div class="glass rounded-3xl p-8">
-                <h3 class="text-2xl font-semibold mb-6">Regional Trends</h3>
-                <canvas id="trendChart"></canvas>
-            </div>
+            <p class="text-lg">
+                717 TASMAC liquor shops near schools, bus stands,
+                temples and public spaces ordered to shut down.
+            </p>
 
         </div>
-    </section>
 
-    <!-- Constituency Table -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <div class="glass rounded-3xl overflow-hidden">
+        <div class="bg-black/20 rounded-3xl p-6">
 
-            <div class="p-6 border-b border-white/10">
-                <h3 class="text-2xl font-semibold">Top Constituency Updates</h3>
-            </div>
+            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
+                Youth Employment Mission
+            </h4>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead class="bg-white/10">
-                        <tr>
-                            <th class="p-4">Constituency</th>
-                            <th class="p-4">Leading Party</th>
-                            <th class="p-4">Margin</th>
-                            <th class="p-4">Status</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                            <td class="p-4">Chennai Central</td>
-                            <td class="p-4">Alliance A</td>
-                            <td class="p-4">24,580</td>
-                            <td class="p-4 text-green-400">Leading</td>
-                        </tr>
-
-                        <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                            <td class="p-4">Coimbatore South</td>
-                            <td class="p-4">Alliance B</td>
-                            <td class="p-4">11,210</td>
-                            <td class="p-4 text-yellow-400">Close Fight</td>
-                        </tr>
-
-                        <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                            <td class="p-4">Madurai East</td>
-                            <td class="p-4">Alliance A</td>
-                            <td class="p-4">39,880</td>
-                            <td class="p-4 text-green-400">Leading</td>
-                        </tr>
-
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="p-4">Salem North</td>
-                            <td class="p-4">Independent</td>
-                            <td class="p-4">2,150</td>
-                            <td class="p-4 text-red-400">Tight Race</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <p class="text-lg">
+                Startup incentives, MSME funding support,
+                district-wise skill training and employment generation schemes.
+            </p>
 
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="mt-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                <h3 class="text-xl font-bold">Tamil Nadu Election Results</h3>
-                <p class="text-gray-400 text-sm">Built with modern HTML, Tailwind CSS & JavaScript</p>
-            </div>
+        <div class="bg-black/20 rounded-3xl p-6">
 
-            <div class="text-gray-400 text-sm">
-                © 2026 Election Live Dashboard
-            </div>
+            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
+                Women's Safety & Welfare
+            </h4>
+
+            <p class="text-lg">
+                Enhanced women's safety measures,
+                stronger law enforcement and welfare-focused governance initiatives.
+            </p>
+
         </div>
-    </footer>
 
-    <script>
-    const voteCtx = document.getElementById('voteChart');
+        <div class="bg-black/20 rounded-3xl p-6">
 
-    new Chart(voteCtx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Alliance A', 'Alliance B', 'Others'],
-        datasets: [{
-          data: [48, 39, 13],
-          backgroundColor: [
-            '#3B82F6',
-            '#10B981',
-            '#F59E0B'
-          ],
-          borderWidth: 0
+            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
+                Transparent Governance
+            </h4>
+
+            <p class="text-lg">
+                White paper audits for all departments,
+                corruption-free administration and public accountability reforms.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CHARTS -->
+
+<section class="max-w-7xl mx-auto px-6 py-12">
+
+<div class="grid lg:grid-cols-2 gap-8">
+
+<div class="glass rounded-3xl p-8">
+
+    <h3 class="text-3xl font-bold mb-6">
+        Vote Share
+    </h3>
+
+    <canvas id="voteChart"></canvas>
+
+</div>
+
+<div class="glass rounded-3xl p-8">
+
+    <h3 class="text-3xl font-bold mb-6">
+        Alliance Trend
+    </h3>
+
+    <canvas id="trendChart"></canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="mt-20 border-t border-yellow-500/20">
+
+<div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-5">
+
+    <div>
+
+        <h3 class="text-3xl font-bold">
+            Tamil Nadu Election Results 2026
+        </h3>
+
+        <p class="text-yellow-100 mt-2">
+            Government Formation • CM Oath Ceremony • Policy Tracker
+        </p>
+
+    </div>
+
+    <div class="text-yellow-100">
+        © 2026 Election Coverage Dashboard
+    </div>
+
+</div>
+
+</footer>
+
+<script>
+
+const voteCtx=document.getElementById('voteChart');
+
+new Chart(voteCtx,{
+    type:'doughnut',
+    data:{
+        labels:['TVK Alliance','Opposition','Others'],
+        datasets:[{
+            data:[57,37,6],
+            backgroundColor:[
+                '#ffd633',
+                '#ff4d4d',
+                '#d1d5db'
+            ]
         }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            labels: {
-              color: '#fff'
+    },
+    options:{
+        plugins:{
+            legend:{
+                labels:{
+                    color:'white'
+                }
             }
-          }
         }
-      }
-    });
+    }
+});
 
-    const trendCtx = document.getElementById('trendChart');
+const trendCtx=document.getElementById('trendChart');
 
-    new Chart(trendCtx, {
-      type: 'line',
-      data: {
-        labels: ['8 AM', '10 AM', '12 PM', '2 PM', '4 PM', '6 PM'],
-        datasets: [
-          {
-            label: 'Alliance A',
-            data: [80, 95, 110, 120, 126, 132],
-            borderColor: '#3B82F6',
-            tension: 0.4
-          },
-          {
-            label: 'Alliance B',
-            data: [60, 68, 72, 78, 82, 86],
-            borderColor: '#10B981',
-            tension: 0.4
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            labels: {
-              color: '#fff'
-            }
-          }
+new Chart(trendCtx,{
+    type:'line',
+    data:{
+        labels:['8AM','10AM','12PM','2PM','4PM','6PM'],
+        datasets:[
+        {
+            label:'TVK Alliance',
+            data:[72,88,101,115,126,132],
+            borderColor:'#ffd633',
+            tension:0.4
         },
-        scales: {
-          y: {
-            ticks: {
-              color: '#fff'
-            },
-            grid: {
-              color: 'rgba(255,255,255,0.1)'
-            }
-          },
-          x: {
-            ticks: {
-              color: '#fff'
-            },
-            grid: {
-              color: 'rgba(255,255,255,0.1)'
-            }
-          }
+        {
+            label:'Opposition',
+            data:[54,60,69,74,80,86],
+            borderColor:'#ff4d4d',
+            tension:0.4
         }
-      }
-    });
-    </script>
+        ]
+    },
+    options:{
+        plugins:{
+            legend:{
+                labels:{
+                    color:'white'
+                }
+            }
+        },
+        scales:{
+            x:{
+                ticks:{
+                    color:'white'
+                }
+            },
+            y:{
+                ticks:{
+                    color:'white'
+                }
+            }
+        }
+    }
+});
+
+</script>
 
 </body>
 </html>
