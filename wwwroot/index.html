@@ -1,533 +1,561 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Tamil Nadu Election Results 2026</title>
+    <title>Tamil Nadu Government LIVE 2026</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
+    <style>
 
-*{
-    font-family:'Poppins',sans-serif;
-}
+        * {
+            font-family: 'Poppins',sans-serif;
+        }
 
-body{
-    margin:0;
-    overflow-x:hidden;
-    background:
-    radial-gradient(circle at top left,#ffd633 0%,transparent 28%),
-    radial-gradient(circle at bottom right,#ffd633 0%,transparent 25%),
-    linear-gradient(135deg,#780000,#c40000,#7a0000);
-    color:white;
-}
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: radial-gradient(circle at top left,#ffd63322 0%,transparent 30%), radial-gradient(circle at bottom right,#ffd63322 0%,transparent 30%), linear-gradient(135deg,#790000,#c40000,#830000);
+            color: white;
+        }
 
-.glass{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.12);
-}
+        .glass {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
 
-.glow{
-    box-shadow:0 0 35px rgba(255,215,0,0.18);
-}
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff2f2f;
+            animation: pulse 1.5s infinite;
+        }
 
-.hero-bg::before{
-    content:'';
-    position:absolute;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,#ffd633 0%,transparent 70%);
-    opacity:0.08;
-    top:-250px;
-    right:-200px;
-    border-radius:50%;
-}
+        @keyframes pulse {
+            0% {
+                transform: scale(1)
+            }
 
-.live-dot{
-    width:12px;
-    height:12px;
-    background:#ff3b3b;
-    border-radius:50%;
-    animation:pulse 1.5s infinite;
-}
+            50% {
+                transform: scale(1.4)
+            }
 
-@keyframes pulse{
-    0%{transform:scale(1)}
-    50%{transform:scale(1.4)}
-    100%{transform:scale(1)}
-}
+            100% {
+                transform: scale(1)
+            }
+        }
 
-.ticker{
-    white-space:nowrap;
-    animation:ticker 30s linear infinite;
-}
+        .ticker {
+            white-space: nowrap;
+            animation: ticker 28s linear infinite;
+        }
 
-@keyframes ticker{
-    0%{transform:translateX(100%)}
-    100%{transform:translateX(-100%)}
-}
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%)
+            }
 
-.card-hover:hover{
-    transform:translateY(-6px);
-    transition:0.3s;
-}
+            100% {
+                transform: translateX(-100%)
+            }
+        }
 
-.gold{
-    color:#ffd633;
-}
+        .news-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
 
-</style>
+        .gold {
+            color: #ffd633;
+        }
+
+        .hero-title {
+            text-shadow: 0 0 25px rgba(255,214,51,0.25);
+        }
+
+        .article-img {
+            transition: 0.4s;
+        }
+
+            .article-img:hover {
+                transform: scale(1.02);
+            }
+    </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
 
-<header class="glass sticky top-0 z-50 border-b border-yellow-500/20">
+    <header class="glass sticky top-0 z-50 border-b border-yellow-500/20">
 
-<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
-    <div>
-        <h1 class="text-4xl font-extrabold">
-            Tamil Nadu Election Results 2026
-        </h1>
-
-        <p class="text-yellow-100 mt-1 text-lg">
-            Live Coverage • Government Formation • CM Initiatives
-        </p>
-    </div>
-
-    <div class="flex items-center gap-3">
-        <div class="live-dot"></div>
-        <span class="font-bold text-lg">LIVE</span>
-    </div>
-
-</div>
-
-</header>
-
-<!-- TICKER -->
-
-<section class="bg-yellow-400 text-black py-3 overflow-hidden font-semibold">
-
-<div class="ticker text-lg">
-
-🔥 Vijay sworn in as Tamil Nadu Chief Minister • PM Modi congratulates Vijay • 717 TASMAC shops ordered shut • 200 units free electricity announced • Historic alliance government formed • Massive celebrations across Tamil Nadu
-
-</div>
-
-</section>
-
-<!-- HERO -->
-
-<section class="relative hero-bg overflow-hidden">
-
-<div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-
-    <div>
-
-        <div class="inline-block px-5 py-2 rounded-full bg-yellow-400 text-black font-semibold mb-6">
-            2026 Assembly Elections
-        </div>
-
-        <h2 class="text-6xl leading-tight font-extrabold mb-6">
-            Real-Time Tamil Nadu <br>
-            Election Dashboard
-        </h2>
-
-        <p class="text-2xl text-yellow-100 leading-relaxed mb-10">
-            Follow live constituency trends, CM oath ceremony highlights,
-            government formation updates, and Tamil Nadu's new policy announcements.
-        </p>
-
-        <div class="flex gap-5 flex-wrap">
-
-            <button class="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition">
-                Live Results
-            </button>
-
-            <button class="border border-yellow-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-400 hover:text-black transition">
-                Watch Ceremony
-            </button>
-
-        </div>
-
-    </div>
-
-    <!-- Seat Projection -->
-
-    <div class="glass rounded-3xl p-10 glow">
-
-        <h3 class="text-3xl font-bold mb-8">
-            Seat Projection
-        </h3>
-
-        <div class="space-y-8">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
             <div>
-                <div class="flex justify-between mb-3">
-                    <span class="text-xl">TVK Alliance</span>
-                    <span class="text-xl font-bold">132 Seats</span>
-                </div>
 
-                <div class="w-full bg-red-900 rounded-full h-5">
-                    <div class="bg-yellow-400 h-5 rounded-full" style="width:57%"></div>
-                </div>
+                <h1 class="text-4xl font-extrabold hero-title">
+                    Tamil Nadu Election Results 2026
+                </h1>
+
+                <p class="text-yellow-100 mt-1 text-lg">
+                    LIVE Coverage • Floor Test • Government Formation
+                </p>
+
             </div>
 
-            <div>
-                <div class="flex justify-between mb-3">
-                    <span class="text-xl">Opposition</span>
-                    <span class="text-xl font-bold">86 Seats</span>
-                </div>
-
-                <div class="w-full bg-red-900 rounded-full h-5">
-                    <div class="bg-red-400 h-5 rounded-full" style="width:37%"></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="flex justify-between mb-3">
-                    <span class="text-xl">Others</span>
-                    <span class="text-xl font-bold">16 Seats</span>
-                </div>
-
-                <div class="w-full bg-red-900 rounded-full h-5">
-                    <div class="bg-gray-300 h-5 rounded-full" style="width:10%"></div>
-                </div>
+            <div class="flex items-center gap-3">
+                <div class="live-dot"></div>
+                <span class="font-bold text-lg">LIVE</span>
             </div>
 
         </div>
 
-    </div>
+    </header>
 
-</div>
+    <!-- LIVE TICKER -->
 
-</section>
+    <section class="bg-yellow-400 text-black py-3 overflow-hidden font-semibold text-lg">
 
-<!-- STATS -->
+        <div class="ticker">
 
-<section class="max-w-7xl mx-auto px-6 py-12">
-
-<div class="grid md:grid-cols-4 gap-6">
-
-    <div class="glass rounded-3xl p-8 text-center card-hover">
-        <h3 class="text-5xl font-bold gold">234</h3>
-        <p class="mt-3 text-lg">Assembly Seats</p>
-    </div>
-
-    <div class="glass rounded-3xl p-8 text-center card-hover">
-        <h3 class="text-5xl font-bold text-green-400">68%</h3>
-        <p class="mt-3 text-lg">Voter Turnout</p>
-    </div>
-
-    <div class="glass rounded-3xl p-8 text-center card-hover">
-        <h3 class="text-5xl font-bold text-yellow-300">717</h3>
-        <p class="mt-3 text-lg">Liquor Shops Closed</p>
-    </div>
-
-    <div class="glass rounded-3xl p-8 text-center card-hover">
-        <h3 class="text-5xl font-bold text-red-300">LIVE</h3>
-        <p class="mt-3 text-lg">Government Updates</p>
-    </div>
-
-</div>
-
-</section>
-
-<!-- CEREMONY -->
-
-<section class="max-w-7xl mx-auto px-6 py-12">
-
-<div class="grid lg:grid-cols-2 gap-8">
-
-<!-- LEFT -->
-
-<div class="glass rounded-3xl p-8 glow">
-
-    <h3 class="text-4xl font-bold mb-8">
-        CM Oath Ceremony
-    </h3>
-
-    <!-- YOUR NEW IMAGE -->
-
-    <img
-        src="cm_vijay.jpg"
-        alt="CM Vijay"
-        class="rounded-3xl mb-8 w-full h-[420px] object-cover border-4 border-yellow-400"
-    >
-
-    <div class="space-y-5 text-lg leading-relaxed">
-
-        <div>
-            📍 <span class="font-bold">Venue:</span>
-            <span class="text-yellow-300">
-                Jawaharlal Nehru Stadium, Chennai
-            </span>
-        </div>
-
-        <div>
-            🕘 <span class="font-bold">Time:</span>
-            <span class="text-yellow-300">
-                10:00 AM
-            </span>
-        </div>
-
-        <div>
-            🎤 Vijay officially took oath as the 13th Chief Minister of Tamil Nadu after securing alliance support from Congress, CPI, CPI(M), VCK and IUML.
-        </div>
-
-        <div>
-            🏛️ TVK emerged as the single largest party with 108 seats and crossed the majority mark with support from 120 MLAs.
-        </div>
-
-        <div>
-            🤝 PM Narendra Modi, Rahul Gandhi, MK Stalin and several national leaders congratulated Vijay after the swearing-in ceremony.
-        </div>
-
-        <div>
-            ⚡ Vijay signed his first major order announcing
-            <span class="text-yellow-300 font-bold">
-                200 units of free electricity
-            </span>
-            for eligible households.
-        </div>
-
-        <div>
-            🚨 717 TASMAC shops near schools, temples and bus stands were ordered to shut down as part of the new reform initiative.
-        </div>
-
-        <div>
-            👥 Massive celebrations erupted across Tamil Nadu with TVK workers distributing sweets and bursting crackers.
-        </div>
-
-        <div>
-            ✨ Vijay became the first Tamil Nadu Chief Minister since 1967 not belonging to either DMK or AIADMK.
-        </div>
-
-    </div>
-
-</div>
-
-<!-- RIGHT -->
-
-<div class="glass rounded-3xl p-8">
-
-    <h3 class="text-4xl font-bold mb-8">
-        CM's New Initiatives
-    </h3>
-
-    <div class="space-y-6">
-
-        <div class="bg-black/20 rounded-3xl p-6">
-
-            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
-                Namma Kalvi 2.0
-            </h4>
-
-            <p class="text-lg">
-                Smart classrooms, digital learning systems,
-                AI-enabled education tools and upgraded government schools across Tamil Nadu.
-            </p>
+            🔥 CM Vijay wins floor test with 144 MLAs • AIADMK faction backs TVK government • Congress, IUML, CPI and VCK extend support • Assembly showdown ends in major victory for Vijay • New welfare announcements expected this week
 
         </div>
 
-        <div class="bg-black/20 rounded-3xl p-6">
+    </section>
 
-            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
-                TASMAC Reform Policy
-            </h4>
+    <!-- MAIN NEWS SECTION -->
 
-            <p class="text-lg">
-                717 TASMAC liquor shops near schools, bus stands,
-                temples and public spaces ordered to shut down.
-            </p>
+    <section class="max-w-7xl mx-auto px-6 py-10">
+
+        <div class="grid lg:grid-cols-4 gap-8">
+
+            <!-- LEFT SIDEBAR -->
+
+            <div class="space-y-5">
+
+                <div class="glass rounded-3xl p-5">
+
+                    <h3 class="text-2xl font-bold mb-5 gold">
+                        Related News
+                    </h3>
+
+                    <div class="space-y-5 text-sm leading-relaxed">
+
+                        <div class="border-b border-white/10 pb-4">
+                            AIADMK rebels back Vijay ahead of crucial Assembly trust vote.
+                        </div>
+
+                        <div class="border-b border-white/10 pb-4">
+                            Governor invites TVK alliance to prove majority on Assembly floor.
+                        </div>
+
+                        <div class="border-b border-white/10 pb-4">
+                            Congress, IUML and VCK reaffirm support to TVK-led government.
+                        </div>
+
+                        <div class="border-b border-white/10 pb-4">
+                            Mass celebrations erupt after CM Vijay's oath ceremony in Chennai.
+                        </div>
+
+                        <div>
+                            TVK announces welfare-first governance model and anti-corruption reforms.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- TRENDING -->
+
+                <div class="glass rounded-3xl p-5">
+
+                    <h3 class="text-2xl font-bold mb-5 gold">
+                        Trending
+                    </h3>
+
+                    <ol class="space-y-5">
+
+                        <li class="flex gap-4">
+                            <span class="text-yellow-300 text-2xl font-bold">1</span>
+                            <span>Vijay secures 144 votes in dramatic Tamil Nadu floor test.</span>
+                        </li>
+
+                        <li class="flex gap-4">
+                            <span class="text-yellow-300 text-2xl font-bold">2</span>
+                            <span>717 TASMAC shops near schools and temples to shut down.</span>
+                        </li>
+
+                        <li class="flex gap-4">
+                            <span class="text-yellow-300 text-2xl font-bold">3</span>
+                            <span>AIADMK split deepens after support to TVK government.</span>
+                        </li>
+
+                        <li class="flex gap-4">
+                            <span class="text-yellow-300 text-2xl font-bold">4</span>
+                            <span>TVK becomes first non-DMK/AIADMK government in decades.</span>
+                        </li>
+
+                        <li class="flex gap-4">
+                            <span class="text-yellow-300 text-2xl font-bold">5</span>
+                            <span>CM Vijay announces youth employment mission.</span>
+                        </li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+            <!-- CENTER ARTICLE -->
+
+            <div class="lg:col-span-2">
+
+                <div class="glass rounded-3xl overflow-hidden">
+
+                    <div class="p-8">
+
+                        <div class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold mb-5">
+                            Breaking News
+                        </div>
+
+                        <h1 class="text-5xl leading-tight font-extrabold mb-5 hero-title">
+                            CM Vijay Wins Massive Floor Test In Tamil Nadu Assembly With 144 Votes
+                        </h1>
+
+                        <p class="text-2xl text-yellow-100 leading-relaxed mb-6">
+
+                            Tamil Nadu Chief Minister C. Joseph Vijay comfortably cleared the confidence motion in the Assembly after securing support from Congress, IUML, CPI, CPI(M), VCK and sections of AIADMK MLAs.
+
+                        </p>
+
+                        <div class="flex gap-5 text-sm text-yellow-200 mb-6 flex-wrap">
+
+                            <span>📅 May 13, 2026</span>
+                            <span>📰 LIVE Politics</span>
+                            <span>⏱️ Read Time: 5 mins</span>
+
+                        </div>
+
+                        <!-- MAIN IMAGE -->
+
+                        <img src="cm-vijay.jpg"
+                             alt="CM Vijay"
+                             class="article-img rounded-3xl w-full h-[500px] object-cover border-4 border-yellow-400" />
+
+                        <!-- ARTICLE CONTENT -->
+
+                        <div class="mt-8 space-y-6 text-xl leading-relaxed text-yellow-50">
+
+                            <p>
+
+                                <b class="gold">Chennai:</b>
+                                Chief Minister Vijay successfully passed the crucial floor test in the Tamil Nadu Legislative Assembly with support from 144 MLAs, solidifying the TVK-led government's position after days of political uncertainty.
+
+                            </p>
+
+                            <p>
+
+                                The trust vote witnessed dramatic political developments as multiple opposition legislators extended support to the new government. The alliance received backing from Congress, IUML, VCK, CPI and CPI(M), while a faction within AIADMK also voted in favour of the confidence motion.
+
+                            </p>
+
+                            <p>
+
+                                The Assembly session turned into one of the most closely watched political events in recent Tamil Nadu history, marking the first time in decades that a non-DMK or non-AIADMK leader assumed power in the state.
+
+                            </p>
+
+                            <p>
+
+                                Following the victory, CM Vijay thanked alliance partners and promised a governance model focused on transparency, welfare schemes, education reforms and employment generation for youth across Tamil Nadu.
+
+                            </p>
+
+                            <p>
+
+                                The Chief Minister also announced the closure of
+                                <b class="gold">717 TASMAC liquor shops</b>
+                                located near schools, bus stands and religious places as part of the government's first major reform initiative.
+
+                            </p>
+
+                            <p>
+
+                                Security was tightened across Chennai during the Assembly proceedings while TVK supporters celebrated outside Fort St. George after the results of the floor test were announced.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+
+            <div class="space-y-6">
+
+                <!-- LIVE UPDATES -->
+
+                <div class="glass rounded-3xl p-6">
+
+                    <h3 class="text-3xl font-bold mb-6 gold">
+                        LIVE Updates
+                    </h3>
+
+                    <div class="space-y-5">
+
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <p class="text-yellow-300 font-bold">11:45 AM</p>
+                            <p>Floor test motion passes with 144 MLAs supporting TVK government.</p>
+                        </div>
+
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <p class="text-yellow-300 font-bold">11:10 AM</p>
+                            <p>AIADMK rebel MLAs vote in favour of CM Vijay.</p>
+                        </div>
+
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <p class="text-yellow-300 font-bold">10:30 AM</p>
+                            <p>Congress and IUML reaffirm support inside Assembly.</p>
+                        </div>
+
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <p class="text-yellow-300 font-bold">9:50 AM</p>
+                            <p>Heavy police deployment around Fort St. George.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- INITIATIVES -->
+
+                <div class="glass rounded-3xl p-6">
+
+                    <h3 class="text-3xl font-bold mb-6 gold">
+                        New CM Initiatives
+                    </h3>
+
+                    <div class="space-y-5">
+
+                        <div class="bg-black/20 rounded-2xl p-5 news-card">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-2">
+                                Free Electricity Scheme
+                            </h4>
+                            <p>
+                                200 units of free electricity announced for eligible families.
+                            </p>
+                        </div>
+
+                        <div class="bg-black/20 rounded-2xl p-5 news-card">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-2">
+                                Youth Employment Mission
+                            </h4>
+                            <p>
+                                Startup support, district-wise hiring and skill training programs.
+                            </p>
+                        </div>
+
+                        <div class="bg-black/20 rounded-2xl p-5 news-card">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-2">
+                                Education Reforms
+                            </h4>
+                            <p>
+                                AI-enabled classrooms and modernization of government schools.
+                            </p>
+                        </div>
+
+                        <div class="bg-black/20 rounded-2xl p-5 news-card">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-2">
+                                Women's Safety
+                            </h4>
+                            <p>
+                                New women protection measures and fast-track grievance systems.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="bg-black/20 rounded-3xl p-6">
+    </section>
 
-            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
-                Youth Employment Mission
-            </h4>
+    <!-- STATS -->
 
-            <p class="text-lg">
-                Startup incentives, MSME funding support,
-                district-wise skill training and employment generation schemes.
-            </p>
+    <section class="max-w-7xl mx-auto px-6 py-10">
 
-        </div>
+        <div class="grid md:grid-cols-4 gap-6">
 
-        <div class="bg-black/20 rounded-3xl p-6">
+            <div class="glass rounded-3xl p-8 text-center">
+                <h3 class="text-5xl font-bold text-yellow-300">144</h3>
+                <p class="mt-3 text-lg">Votes in Favour</p>
+            </div>
 
-            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
-                Women's Safety & Welfare
-            </h4>
+            <div class="glass rounded-3xl p-8 text-center">
+                <h3 class="text-5xl font-bold text-green-400">68%</h3>
+                <p class="mt-3 text-lg">Voter Turnout</p>
+            </div>
 
-            <p class="text-lg">
-                Enhanced women's safety measures,
-                stronger law enforcement and welfare-focused governance initiatives.
-            </p>
+            <div class="glass rounded-3xl p-8 text-center">
+                <h3 class="text-5xl font-bold text-red-300">717</h3>
+                <p class="mt-3 text-lg">Liquor Shops Closed</p>
+            </div>
 
-        </div>
-
-        <div class="bg-black/20 rounded-3xl p-6">
-
-            <h4 class="text-3xl font-bold text-yellow-300 mb-3">
-                Transparent Governance
-            </h4>
-
-            <p class="text-lg">
-                White paper audits for all departments,
-                corruption-free administration and public accountability reforms.
-            </p>
+            <div class="glass rounded-3xl p-8 text-center">
+                <h3 class="text-5xl font-bold text-yellow-300">234</h3>
+                <p class="mt-3 text-lg">Assembly Seats</p>
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</div>
+    <!-- CHARTS -->
 
-</div>
+    <section class="max-w-7xl mx-auto px-6 py-10">
 
-</section>
+        <div class="grid lg:grid-cols-2 gap-8">
 
-<!-- CHARTS -->
+            <div class="glass rounded-3xl p-8">
 
-<section class="max-w-7xl mx-auto px-6 py-12">
+                <h3 class="text-3xl font-bold mb-6">
+                    Assembly Support
+                </h3>
 
-<div class="grid lg:grid-cols-2 gap-8">
+                <canvas id="voteChart"></canvas>
 
-<div class="glass rounded-3xl p-8">
+            </div>
 
-    <h3 class="text-3xl font-bold mb-6">
-        Vote Share
-    </h3>
+            <div class="glass rounded-3xl p-8">
 
-    <canvas id="voteChart"></canvas>
+                <h3 class="text-3xl font-bold mb-6">
+                    Alliance Trend
+                </h3>
 
-</div>
+                <canvas id="trendChart"></canvas>
 
-<div class="glass rounded-3xl p-8">
+            </div>
 
-    <h3 class="text-3xl font-bold mb-6">
-        Alliance Trend
-    </h3>
+        </div>
 
-    <canvas id="trendChart"></canvas>
+    </section>
 
-</div>
+    <!-- FOOTER -->
 
-</div>
+    <footer class="border-t border-yellow-500/20 mt-16">
 
-</section>
+        <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-5">
 
-<!-- FOOTER -->
+            <div>
 
-<footer class="mt-20 border-t border-yellow-500/20">
+                <h3 class="text-3xl font-bold">
+                    Tamil Nadu LIVE Politics 2026
+                </h3>
 
-<div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-5">
+                <p class="text-yellow-100 mt-2">
+                    Floor Test • Government Formation • Election Analysis
+                </p>
 
-    <div>
+            </div>
 
-        <h3 class="text-3xl font-bold">
-            Tamil Nadu Election Results 2026
-        </h3>
+            <div class="text-yellow-100">
+                © 2026 Political Coverage Dashboard
+            </div>
 
-        <p class="text-yellow-100 mt-2">
-            Government Formation • CM Oath Ceremony • Policy Tracker
-        </p>
+        </div>
 
-    </div>
+    </footer>
 
-    <div class="text-yellow-100">
-        © 2026 Election Coverage Dashboard
-    </div>
+    <script>
 
-</div>
+        const voteCtx = document.getElementById('voteChart');
 
-</footer>
-
-<script>
-
-const voteCtx=document.getElementById('voteChart');
-
-new Chart(voteCtx,{
-    type:'doughnut',
-    data:{
-        labels:['TVK Alliance','Opposition','Others'],
-        datasets:[{
-            data:[57,37,6],
-            backgroundColor:[
-                '#ffd633',
-                '#ff4d4d',
-                '#d1d5db'
-            ]
-        }]
-    },
-    options:{
-        plugins:{
-            legend:{
-                labels:{
-                    color:'white'
-                }
-            }
-        }
-    }
-});
-
-const trendCtx=document.getElementById('trendChart');
-
-new Chart(trendCtx,{
-    type:'line',
-    data:{
-        labels:['8AM','10AM','12PM','2PM','4PM','6PM'],
-        datasets:[
-        {
-            label:'TVK Alliance',
-            data:[72,88,101,115,126,132],
-            borderColor:'#ffd633',
-            tension:0.4
-        },
-        {
-            label:'Opposition',
-            data:[54,60,69,74,80,86],
-            borderColor:'#ff4d4d',
-            tension:0.4
-        }
-        ]
-    },
-    options:{
-        plugins:{
-            legend:{
-                labels:{
-                    color:'white'
-                }
-            }
-        },
-        scales:{
-            x:{
-                ticks:{
-                    color:'white'
-                }
+        new Chart(voteCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['TVK Alliance', 'Opposition', 'Others'],
+                datasets: [{
+                    data: [144, 22, 5],
+                    backgroundColor: [
+                        '#ffd633',
+                        '#ff4d4d',
+                        '#d1d5db'
+                    ]
+                }]
             },
-            y:{
-                ticks:{
-                    color:'white'
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
                 }
             }
-        }
-    }
-});
+        });
 
-</script>
+        const trendCtx = document.getElementById('trendChart');
+
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ['8AM', '9AM', '10AM', '11AM', '12PM'],
+                datasets: [
+                    {
+                        label: 'TVK Support',
+                        data: [108, 118, 126, 136, 144],
+                        borderColor: '#ffd633',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Opposition',
+                        data: [58, 47, 38, 30, 22],
+                        borderColor: '#ff4d4d',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'white'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
 
 </body>
 </html>
